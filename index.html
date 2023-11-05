@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sign-up Form</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@300;400;600;700;900&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+    integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <section class="hero">
+    <div class="hero__heading-wrapper">
+      <h1 class="hero__heading">Metro Motion</h1>
+      <h2 class="hero__subheading">Street Photography Community</h2>
+    </div>
+    <p class="hero__credit notice">
+      Photo by <a class="hero__credit-link"
+        href="https://unsplash.com/@zerotake?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">
+        zero take</a> on <a class="hero__credit-link"
+        href="https://unsplash.com/photos/a-man-walking-across-a-bridge-at-night-X0XIrKsbwjY?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">
+        Unsplash
+      </a>
+    </p>
+  </section>
+  <main class="main">
+    <section class="main__info main__section">
+      <p class="main__info-title">
+        <span class="main__info--large">Discover the city through your&nbsp;lens</span>
+        <span class="main__info--small">Capture the hidden beauty of&nbsp;urban&nbsp;life</span>
+      </p>
+    </section>
+    <section class="main__form-wrapper main__section">
+      <p class="form__title"><strong>Sign up to join our community</strong></p>
+      <form action="" method="get" class="form" id="registration-form">
+        <div class="form__item">
+          <label class="form__item-title" for="first-name">First name</label>
+          <input required class="form__item-input empty" type="text" id="first-name" name="first-name" />
+        </div>
+        <div class="form__item">
+          <label class="form__item-title" for="last-name">Last name</label>
+          <input required class="form__item-input empty" type="text" id="last-name" name="last-name" />
+        </div>
+        <div class="form__item">
+          <label class="form__item-title" for="email">Email</label>
+          <input required class="form__item-input empty" type="email" id="email" name="email" />
+        </div>
+        <div class="form__item">
+          <label class="form__item-title" for="phone-number">Phone number</label>
+          <input required class="form__item-input empty" type="tel" id="phone-number" name="phone-number" />
+        </div>
+        <div class="form__item">
+          <label class="form__item-title" for="pwd">Password</label>
+          <input required class="form__item-input empty" type="password" id="pwd" name="pwd" />
+        </div>
+        <div class="form__item">
+          <label class="form__item-title" for="pwd-confirm">Confirm password</label>
+          <input required class="form__item-input empty" type="password" id="pwd-confirm" />
+        </div>
+      </form>
+    </section>
+    <section class="main__below main__section">
+      <button class="btn main__below-submit" type="submit" form="registration-form">Create Account</button>
+      <p class="main__below-login">Already have an account? <a href="#" class="main__below-login-link">Log in</a></p>
+    </section>
+    <p class="main__notice notice">
+      This is not a real online service. Designed and built by
+      <a class="main__notice-link notice-link" href="https://github.com/pascard20">Łukasz Pasternak</a>
+      <a class="main__notice-link main__notice-icon notice-link"
+        href="https://github.com/pascard20/odin-05-signup-form"><i class="fa-brands fa-github"></i></a>
+    </p>
+  </main>
+</body>
+
+</html>
