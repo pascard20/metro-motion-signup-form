@@ -32,6 +32,11 @@ strong {
 :root {
   --colorCTA: #dd6d0c;
   --colorText: #0f1c19;
+  --colorInputFocus: #8a8a8a;
+  --colorValid: #159215;
+  --colorInvalid: #d11919;
+
+  --formWidth: 40em;
 }
 
 /* --------------------------------- GENERAL -------------------------------- */
@@ -145,12 +150,12 @@ body {
 /* ---------------------------------- MAIN ---------------------------------- */
 
 .main__section {
-  padding: 0 calc(2.5rem + 1vw);
+  padding: 0 calc(2rem + 3vw);
 }
 
 .main__info {
   padding-top: 2em;
-  font-size: 1.5em;
+  font-size: 1.6em;
   flex: 2;
   display: flex;
   flex-direction: column;
@@ -177,7 +182,7 @@ body {
 
 .main__info--small {
   margin-left: .1em;
-  font-size: 1em;
+  font-size: .9em;
   text-transform: uppercase;
   font-weight: normal;
   letter-spacing: normal;
@@ -194,7 +199,7 @@ body {
 .form {
   display: grid;
   grid-template: auto / repeat(2, 1fr);
-  width: min(100%, 50em);
+  width: min(100%, var(--formWidth));
   gap: 1em 2.25em;
 }
 
@@ -209,13 +214,14 @@ body {
 .form__title::after {
   content: "";
   display: block;
-  width: min(100%, 50em);
+  width: min(100%, var(--formWidth));
   height: 1px;
   background-color: rgba(0, 0, 0, .4);
   margin-top: .3em;
 }
 
 .form__item {
+  position: relative;
   display: flex;
   flex-direction: column;
   width: 100%;
@@ -228,16 +234,61 @@ body {
   color: rgba(0, 0, 0, .75);
 }
 
+.form__item-title--small {
+  text-transform: lowercase;
+  font-size: .75em;
+}
+
 .form__item-input {
+  position: relative;
   width: 100%;
   padding: .6em .4em;
   border-radius: 3px;
   border: 1px solid rgba(0, 0, 0, .4);
 }
 
+.form__item-input:not(.empty):valid {
+  border-color: var(--colorValid);
+  outline-color: var(--colorValid);
+}
+
+.form__item-symbol {
+  position: absolute;
+  right: .5em;
+  bottom: 1.2em;
+}
+
+.form__item-input:not(.empty) {
+  padding-right: 1.5em;
+}
+
+.form__item-symbol::after {
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-60%);
+}
+
+.form__item-input:not(.empty):valid+.form__item-symbol::after {
+  content: "✓";
+  color: var(--colorValid);
+}
+
+.form__item-input:not(.empty):invalid+.form__item-symbol::after {
+  content: "✗";
+  color: var(--colorInvalid);
+}
+
+.form__item-input:not(.empty):invalid {
+  border-color: var(--colorInvalid);
+  outline-color: var(--colorInvalid);
+}
+
+/* :not(.x) added to ensure that focus has the priority */
 .form__item-input:focus {
-  outline: 1px solid #7aafff;
-  border-color: #7aafff;
+  border-color: var(--colorInputFocus);
+  outline-color: var(--colorInputFocus);
+  outline-style: solid;
 }
 
 .btn {
@@ -246,6 +297,7 @@ body {
   background-color: var(--colorCTA);
   border: none;
   border-radius: 5px;
+  cursor: pointer;
 }
 
 .main__below {

@@ -15,6 +15,7 @@
     crossorigin="anonymous" referrerpolicy="no-referrer" />
 
   <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
 </head>
 
 <body>
@@ -36,44 +37,52 @@
     <section class="main__info main__section">
       <p class="main__info-title">
         <span class="main__info--large">Discover the city through your&nbsp;lens</span>
-        <span class="main__info--small">Capture the hidden beauty of&nbsp;urban&nbsp;life</span>
+        <span class="main__info--small">Join our community for street photography enthusiasts</span>
       </p>
     </section>
     <section class="main__form-wrapper main__section">
-      <p class="form__title"><strong>Sign up to join our community</strong></p>
+      <p class="form__title"><strong>Sign up to join</strong></p>
       <form action="" method="get" class="form" id="registration-form">
         <div class="form__item">
-          <label class="form__item-title" for="first-name">First name</label>
-          <input required class="form__item-input empty" type="text" id="first-name" name="first-name" />
+          <label class="form__item-title" for="first-name">First name
+            <input required class="form__item-input empty" type="text" id="first-name" name="first-name" />
+            <span class="form__item-symbol"></span></label>
         </div>
         <div class="form__item">
-          <label class="form__item-title" for="last-name">Last name</label>
-          <input required class="form__item-input empty" type="text" id="last-name" name="last-name" />
+          <label class="form__item-title" for="last-name">Last name
+            <input required class="form__item-input empty" type="text" id="last-name" name="last-name" />
+            <span class="form__item-symbol"></span></label>
         </div>
         <div class="form__item">
-          <label class="form__item-title" for="email">Email</label>
-          <input required class="form__item-input empty" type="email" id="email" name="email" />
+          <label class="form__item-title" for="email">Email
+            <input required class="form__item-input empty" type="email" id="email" name="email" />
+            <span class="form__item-symbol"></span></label>
         </div>
         <div class="form__item">
-          <label class="form__item-title" for="phone-number">Phone number</label>
-          <input required class="form__item-input empty" type="tel" id="phone-number" name="phone-number" />
+          <label class="form__item-title" for="phone-number">Phone number <span
+              class="form__item-title--small">(optional)</span>
+            <input pattern="\d{3}[\s\-\.]?\d{3}[\s\-\.]?\d{3}" class="form__item-input empty" type="tel"
+              id="phone-number" name="phone-number" />
+            <span class="form__item-symbol"></span></label>
         </div>
         <div class="form__item">
           <label class="form__item-title" for="pwd">Password</label>
           <input required class="form__item-input empty" type="password" id="pwd" name="pwd" />
+          <span class="form__item-symbol"></span></label>
         </div>
         <div class="form__item">
-          <label class="form__item-title" for="pwd-confirm">Confirm password</label>
-          <input required class="form__item-input empty" type="password" id="pwd-confirm" />
+          <label class="form__item-title" for="pwd-confirm">Confirm password
+            <input required class="form__item-input empty" type="password" id="pwd-confirm" />
+            <span class="form__item-symbol"></span></label>
         </div>
       </form>
     </section>
     <section class="main__below main__section">
-      <button class="btn main__below-submit" type="submit" form="registration-form">Create Account</button>
+      <button class="btn main__below-submit" type="button" form="registration-form">Create Account</button>
       <p class="main__below-login">Already have an account? <a href="#" class="main__below-login-link">Log in</a></p>
     </section>
     <p class="main__notice notice">
-      This is not a real online service. Designed and built by
+      This is not a real online service. Page designed and built by
       <a class="main__notice-link notice-link" href="https://github.com/pascard20">Łukasz Pasternak</a>
       <a class="main__notice-link main__notice-icon notice-link"
         href="https://github.com/pascard20/odin-05-signup-form"><i class="fa-brands fa-github"></i></a>
