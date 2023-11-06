@@ -65,21 +65,32 @@
               id="phone-number" name="phone-number" />
             <span class="form__item-symbol"></span></label>
         </div>
-        <div class="form__item">
+        <div class="form__item form__item--pwd">
           <label class="form__item-title" for="pwd">Password
-            <input required class="form__item-input empty" type="password" id="pwd" name="pwd" />
+            <input role="presentation" autocomplete="new-password" required class="form__item-input empty"
+              type="password" id="pwd" name="pwd" />
             <span class="form__item-symbol"></span></label>
         </div>
-        <div class="form__item">
+        <div class="form__item form__item--pwd">
           <label class="form__item-title" for="pwd-confirm">Confirm password
             <input required class="form__item-input empty" type="password" id="pwd-confirm" />
             <span class="form__item-symbol"></span></label>
         </div>
+        <aside class="pwd-constraints">
+          <!-- <p class="pwd-constraints__desc">At&nbsp;least:</p> -->
+          <ul class="pwd-constraints__list">
+            <li class="pwd-constraints__item length">8 characters</li>
+            <li class="pwd-constraints__item number">number</li>
+            <li class="pwd-constraints__item upper">uppercase letter</li>
+            <li class="pwd-constraints__item lower">lowercase letter</li>
+            <li class="pwd-constraints__item special">special character</li>
+          </ul>
+        </aside>
       </form>
     </section>
     <section class="main__below main__section">
       <div class="main__below-wrapper">
-        <button class="btn main__below-submit" type="button" form="registration-form">Create Account</button>
+        <button class="btn main__below-submit" type="submit" form="registration-form">Create Account</button>
         <p class="main__below-login">Already have an account? <a href="#" class="main__below-login-link">Log in</a></p>
       </div>
       <p class="main__notice notice">
