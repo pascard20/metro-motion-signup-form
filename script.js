@@ -10,6 +10,14 @@ elemPwdItemUpper = document.querySelector('.pwd-constraints__item.upper');
 elemPwdItemLower = document.querySelector('.pwd-constraints__item.lower');
 elemPwdItemSpecial = document.querySelector('.pwd-constraints__item.special');
 
+const passwordRequirements = [
+  elemPwdItemLength,
+  elemPwdItemNumber,
+  elemPwdItemUpper,
+  elemPwdItemLower,
+  elemPwdItemSpecial
+];
+
 const handleInput = event => {
   const element = event.target;
   if (!element.required && !element.value) element.classList.add('empty');
@@ -31,13 +39,7 @@ const handleInput = event => {
     else elemPwdItemSpecial.classList.remove('valid');
 
     let valid = true;
-    for (const item of [
-      elemPwdItemLength,
-      elemPwdItemNumber,
-      elemPwdItemUpper,
-      elemPwdItemLower,
-      elemPwdItemSpecial
-    ]) {
+    for (const item of passwordRequirements) {
       if (!item.className.includes('valid')) {
         valid = false;
         element.setCustomValidity('Invalid password');

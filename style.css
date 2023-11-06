@@ -449,10 +449,17 @@ body {
   transition: .6s;
   transition-delay: var(--pwd-constraints-list-delay);
   margin-bottom: -.2em;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }
 
 .pwd-constraints.enabled .pwd-constraints__list {
   opacity: .4;
+  -webkit-user-select: initial;
+  -ms-user-select: initial;
+  user-select: initial;
+  transition: all .6s;
 }
 
 .form__item--pwd:focus-within~.pwd-constraints .pwd-constraints__list {
@@ -474,7 +481,7 @@ body {
 .pwd-constraints__list {
   display: flex;
   flex-wrap: wrap;
-  margin-left: .7em;
+  margin-left: .75em;
   color: #707070;
   gap: 0 1.5em;
 }
