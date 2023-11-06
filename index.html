@@ -8,8 +8,8 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@300;400;600;700;900&display=swap" rel="stylesheet">
-
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@90..103,400..900&display=swap"
+    rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
     integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
     crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -66,9 +66,9 @@
             <span class="form__item-symbol"></span></label>
         </div>
         <div class="form__item">
-          <label class="form__item-title" for="pwd">Password</label>
-          <input required class="form__item-input empty" type="password" id="pwd" name="pwd" />
-          <span class="form__item-symbol"></span></label>
+          <label class="form__item-title" for="pwd">Password
+            <input required class="form__item-input empty" type="password" id="pwd" name="pwd" />
+            <span class="form__item-symbol"></span></label>
         </div>
         <div class="form__item">
           <label class="form__item-title" for="pwd-confirm">Confirm password
@@ -78,15 +78,17 @@
       </form>
     </section>
     <section class="main__below main__section">
-      <button class="btn main__below-submit" type="button" form="registration-form">Create Account</button>
-      <p class="main__below-login">Already have an account? <a href="#" class="main__below-login-link">Log in</a></p>
+      <div class="main__below-wrapper">
+        <button class="btn main__below-submit" type="button" form="registration-form">Create Account</button>
+        <p class="main__below-login">Already have an account? <a href="#" class="main__below-login-link">Log in</a></p>
+      </div>
+      <p class="main__notice notice">
+        This is not a real online service. Page designed and built by
+        <a class="main__notice-link notice-link" href="https://github.com/pascard20">Łukasz Pasternak</a>
+        <a class="main__notice-link main__notice-icon notice-link"
+          href="https://github.com/pascard20/odin-05-signup-form"><i class="fa-brands fa-github"></i></a>
+      </p>
     </section>
-    <p class="main__notice notice">
-      This is not a real online service. Page designed and built by
-      <a class="main__notice-link notice-link" href="https://github.com/pascard20">Łukasz Pasternak</a>
-      <a class="main__notice-link main__notice-icon notice-link"
-        href="https://github.com/pascard20/odin-05-signup-form"><i class="fa-brands fa-github"></i></a>
-    </p>
   </main>
 </body>
 
