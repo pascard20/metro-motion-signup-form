@@ -2,6 +2,7 @@ elemForm = document.querySelector('.form');
 elemPassword = document.querySelector('#pwd');
 elemPasswordConfirm = document.querySelector('#pwd-confirm');
 elemPasswordConstraints = document.querySelector('.pwd-constraints');
+elemRoot = document.documentElement;
 
 elemPwdItemLength = document.querySelector('.pwd-constraints__item.length');
 elemPwdItemNumber = document.querySelector('.pwd-constraints__item.number');
@@ -11,7 +12,6 @@ elemPwdItemSpecial = document.querySelector('.pwd-constraints__item.special');
 
 const handleInput = event => {
   const element = event.target;
-  console.log(element)
   if (!element.required && !element.value) element.classList.add('empty');
   if (element === elemPassword) {
     const pwd = element.value;
@@ -47,8 +47,7 @@ const handleInput = event => {
     if (valid) {
       element.classList.remove('empty');
       element.setCustomValidity('');
-    };
-
+    }
   }
   if ([elemPassword, elemPasswordConfirm].includes(element)) {
     if (!elemPassword.validity.valid) {
@@ -58,21 +57,38 @@ const handleInput = event => {
     } else {
       elemPasswordConfirm.setCustomValidity('');
       elemPasswordConfirm.classList.remove('empty');
-    };
+    }
   }
 }
 
 const handleFocusOut = event => {
   const element = event.target;
   if (element.required || element.value) element.classList.remove('empty');
-  // if (element === elemPassword) elemPasswordConstraints.classList.remove('enabled');
+  if ([elemPassword, elemPasswordConfirm].includes(element)
+    && elemPassword.validity.valid
+    && elemPasswordConfirm.validity.valid) {
+
+    const delay = getComputedStyle(elemRoot).getPropertyValue('--pwd-constraints-delay');
+    elemRoot.style.setProperty('--pwd-constraints-before-delay', delay);
+    elemRoot.style.setProperty('--pwd-constraints-list-delay', '0');
+
+    const timeout = parseInt(getComputedStyle(elemRoot).getPropertyValue('--pwd-constraints-transition'));
+    setTimeout(() => {
+      elemRoot.style.setProperty('--pwd-constraints-before-delay', '0');
+      elemRoot.style.setProperty('--pwd-constraints-list-delay', delay);
+    }, timeout);
+
+    elemPasswordConstraints.classList.remove('enabled');
+
+  }
 }
 
 const handleFocusIn = event => {
   const element = event.target;
-  if ([elemPassword, elemPasswordConfirm].includes(element)) elemPasswordConstraints.classList.add('enabled');
+  if ([elemPassword, elemPasswordConfirm].includes(element)) {
+    elemPasswordConstraints.classList.add('enabled');
+  }
 }
-
 
 elemForm.addEventListener('focusin', handleFocusIn);
 elemForm.addEventListener('input', handleInput);
