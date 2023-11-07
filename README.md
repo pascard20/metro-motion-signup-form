@@ -1,12 +1,15 @@
 ## Project
 
-**Sign-up form** for an imaginary website 'Metro Motion'
-[View Demo](https://pascard20.github.io/metro-motion-signup-form/)
-
 <div align="center">
+  <p><b>Sign-up form</b> for an imaginary website 'Metro Motion'</big>
+  <br>
+  <a href="https://pascard20.github.io/metro-motion-signup-form/">View Demo</a>
+  <p></p>
+  
   <a href="https://pascard20.github.io/metro-motion-signup-form/">
-    <img src="./img/readme-cover.jpg" alt="Sign-up form" width="100">
+    <img src="./img/readme-cover.jpg" alt="Sign-up form" width="100%">
   </a>
+</div>
 
 <br>
 
@@ -32,3 +35,4 @@
 * This project is a part of [The Odin Project](https://www.theodinproject.com/) curriculum
 * Icons by [Font Awesome](https://fontawesome.com/)
 * Photo by [zero take](https://unsplash.com/@zerotake) on [Unsplash](https://unsplash.com/photos/a-man-walking-across-a-bridge-at-night-X0XIrKsbwjY)
+* Vector shapes by <a href="https://www.freepik.com/author/s-salvador">s-salvador</a> on <a href="https://www.freepik.com/free-vector/abstract-background-with-geometric-shapes_4500911.htm">Freepik</a>
