@@ -48,6 +48,10 @@ strong {
 
 /* --------------------------------- GENERAL -------------------------------- */
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   font-family: 'Archivo', sans-serif;
   letter-spacing: 0.15px;
@@ -85,6 +89,7 @@ body {
   background-color: #faf8f8;
   gap: 3rem;
   overflow-y: auto;
+  min-height: 100dvh;
 }
 
 /* ---------------------------------- HERO ---------------------------------- */
@@ -139,6 +144,34 @@ body {
   line-height: 1.275;
   font-stretch: 94%;
   width: 80%;
+}
+
+.hero__nav-arrows {
+  display: flex;
+  flex-direction: column;
+
+  color: white;
+  position: absolute;
+  bottom: 12dvh;
+  left: 50%;
+  transform: translateX(-50%) scale(1);
+
+  font-size: 2.15em;
+  text-decoration: none;
+  opacity: 0;
+
+  pointer-events: none;
+}
+
+.hero__nav-arrows:hover {
+  opacity: .95;
+  transform: translateX(-50%) scale(1.1);
+}
+
+.hero__nav-arrows>* {
+  margin: -.25em 0;
+  animation: fade-in 2s 1s both;
+  text-shadow: 1px 1px 0 rgba(0, 0, 0, .3);
 }
 
 .hero__credit {
@@ -365,7 +398,6 @@ body {
   justify-content: space-between;
   align-items: flex-start;
   z-index: 1;
-  /* padding: 0; */
 }
 
 .main__below-submit {
@@ -408,12 +440,13 @@ body {
 .main__notice-links {
   display: flex;
   align-items: center;
+  justify-content: center;
 }
 
 .main__notice-icon {
   display: block;
   font-size: 1.1em;
-  /* margin-top: .03em; */
+  margin-top: .1em;
 }
 
 .main__notice-icon:hover {
@@ -429,6 +462,7 @@ body {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+  align-items: center;
 }
 
 /* -------------------------- PASSWORD CONSTRAINTS -------------------------- */
@@ -443,7 +477,6 @@ body {
   font-size: .925em;
   grid-column: 1 / -1;
   grid-row: 3;
-  /* opacity: 0; */
   display: flex;
   gap: .5em;
   overflow: hidden;
@@ -499,12 +532,6 @@ body {
   font-weight: 600;
   font-stretch: 97%;
   color: #444;
-}
-
-@media only screen and (max-width: 1240px) {
-  .pwd-constraints__desc {
-    display: none;
-  }
 }
 
 .pwd-constraints__item::marker {
@@ -567,10 +594,7 @@ body {
 
   .form {
     grid-template-columns: auto;
-    /* width: min(100%, 15em); */
     width: 100%;
-    /* gap: 1em 2.25em; */
-    /* align-items: center */
   }
 
   .form__item {
@@ -589,7 +613,6 @@ body {
 @media only screen and (max-width: 715px) {
   body {
     flex-direction: column;
-    /* overflow-y: auto; */
     justify-content: flex-start;
     height: auto;
   }
@@ -597,11 +620,16 @@ body {
   .hero {
     width: 100%;
     height: 100dvh;
-    /* overflow-y: auto; */
   }
 
   .hero__heading-wrapper {
     font-size: calc(.75em + 12vw);
+  }
+
+  .hero__nav-arrows {
+    pointer-events: initial;
+    transition: all .2s;
+    opacity: .7;
   }
 
   .main {
@@ -615,6 +643,10 @@ body {
 
   .form {
     grid-template-columns: repeat(2, 1fr);
+  }
+
+  .pwd-constraints {
+    grid-row: 3;
   }
 
   .main__below-wrapper {
@@ -633,7 +665,6 @@ body {
 
   .form__item {
     width: 100%;
-    /* font-size: 1.1em; */
   }
 
   .pwd-constraints__list {
@@ -641,9 +672,9 @@ body {
     justify-content: center;
   }
 
-  /* .main__info-title {
-    text-align: center;
-  } */
+  .pwd-constraints {
+    grid-row: 5;
+  }
 
   .main__info-title::before {
     width: 200%;

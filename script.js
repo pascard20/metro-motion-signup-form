@@ -8,14 +8,12 @@ elemPwdItemLength = document.querySelector('.pwd-constraints__item.length');
 elemPwdItemNumber = document.querySelector('.pwd-constraints__item.number');
 elemPwdItemUpper = document.querySelector('.pwd-constraints__item.upper');
 elemPwdItemLower = document.querySelector('.pwd-constraints__item.lower');
-elemPwdItemSpecial = document.querySelector('.pwd-constraints__item.special');
 
 const passwordRequirements = [
   elemPwdItemLength,
   elemPwdItemNumber,
   elemPwdItemUpper,
   elemPwdItemLower,
-  elemPwdItemSpecial
 ];
 
 const handleInput = event => {
@@ -26,7 +24,7 @@ const handleInput = event => {
     if (pwd.length >= 8) elemPwdItemLength.classList.add('valid');
     else elemPwdItemLength.classList.remove('valid');
 
-    if (pwd.match(/\d/)) elemPwdItemNumber.classList.add('valid');
+    if (pwd.match(/[^\p{L}]/gu)) elemPwdItemNumber.classList.add('valid');
     else elemPwdItemNumber.classList.remove('valid');
 
     if (pwd.match(/\p{Lu}/gu)) elemPwdItemUpper.classList.add('valid');
@@ -35,8 +33,6 @@ const handleInput = event => {
     if (pwd.match(/\p{Ll}/gu)) elemPwdItemLower.classList.add('valid');
     else elemPwdItemLower.classList.remove('valid');
 
-    if (pwd.match(/[^\p{L}\d]/gu)) elemPwdItemSpecial.classList.add('valid');
-    else elemPwdItemSpecial.classList.remove('valid');
 
     let valid = true;
     for (const item of passwordRequirements) {
