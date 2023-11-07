@@ -4,7 +4,10 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Sign-up Form</title>
+  <title>Metro Motion | Sign Up</title>
+
+  <link rel="stylesheet" href="style.css">
+  <link rel="shortcut icon" href="img/favicon.png" type="image/x-icon">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -14,71 +17,85 @@
     integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
     crossorigin="anonymous" referrerpolicy="no-referrer" />
 
-  <link rel="stylesheet" href="style.css">
   <script src="script.js" defer></script>
 </head>
 
 <body>
   <section class="hero">
+
     <div class="hero__heading-wrapper">
       <h1 class="hero__heading">Metro Motion</h1>
       <h2 class="hero__subheading">Street Photography Community</h2>
     </div>
-    <a href="#main" class="hero__nav-arrows">
-      <i class="fa-solid fa-chevron-down"></i><i class="fa-solid fa-chevron-down"></i><i
-        class="fa-solid fa-chevron-down"></i>
-    </a>
-    <p class="hero__credit notice">
-      Photo by <a class="hero__credit-link"
-        href="https://unsplash.com/@zerotake?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">
-        zero take</a> on <a class="hero__credit-link"
-        href="https://unsplash.com/photos/a-man-walking-across-a-bridge-at-night-X0XIrKsbwjY?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">
-        Unsplash
+
+    <div class="hero__below-wrapper">
+      <a href="#main" class="hero__nav-arrows">
+        <i class="fa-solid fa-chevron-down"></i><i class="fa-solid fa-chevron-down"></i><i
+          class="fa-solid fa-chevron-down"></i>
       </a>
-    </p>
+      <p class="hero__credit notice">
+        Photo by <a class="hero__credit-link"
+          href="https://unsplash.com/@zerotake?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">
+          zero take</a> on <a class="hero__credit-link"
+          href="https://unsplash.com/photos/a-man-walking-across-a-bridge-at-night-X0XIrKsbwjY?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">
+          Unsplash
+        </a>
+      </p>
+    </div>
+
   </section>
   <main class="main" id="main">
+
     <section class="main__info main__section">
       <p class="main__info-title">
         <span class="main__info--large">Discover the city through your&nbsp;lens</span>
         <span class="main__info--small">Join our community for street photography enthusiasts</span>
       </p>
     </section>
+
     <section class="main__form-wrapper main__section">
+
       <p class="form__title"><strong>Sign up to join</strong></p>
-      <form action="" method="get" class="form" id="registration-form">
+      <form action="" method="" class="form" id="registration-form">
+
         <div class="form__item">
           <label class="form__item-title" for="first-name">First name
             <input required class="form__item-input empty" type="text" id="first-name" name="first-name" />
             <span class="form__item-symbol"></span></label>
         </div>
+
         <div class="form__item">
           <label class="form__item-title" for="last-name">Last name
             <input required class="form__item-input empty" type="text" id="last-name" name="last-name" />
             <span class="form__item-symbol"></span></label>
         </div>
+
         <div class="form__item">
           <label class="form__item-title" for="email">Email
             <input required class="form__item-input empty" type="email" id="email" name="email" />
             <span class="form__item-symbol"></span></label>
         </div>
+
         <div class="form__item">
           <label class="form__item-title" for="phone-number">Phone number <span
               class="form__item-title--small">(optional)</span>
-            <input pattern="\d{3}[\s\-\.]?\d{3}[\s\-\.]?\d{3}" class="form__item-input empty" type="tel"
+            <input pattern="\d{3}[\s\-\.]?\d{3}[\s\-\.]?\d{3}\d?" class="form__item-input empty" type="tel"
               id="phone-number" name="phone-number" />
             <span class="form__item-symbol"></span></label>
         </div>
+
         <div class="form__item form__item--pwd">
           <label class="form__item-title" for="pwd">Password
             <input autocomplete="off" required class="form__item-input empty" type="password" id="pwd" name="pwd" />
             <span class="form__item-symbol"></span></label>
         </div>
+
         <div class="form__item form__item--pwd">
           <label class="form__item-title" for="pwd-confirm">Confirm password
             <input autocomplete="off" required class="form__item-input empty" type="password" id="pwd-confirm" />
             <span class="form__item-symbol"></span></label>
         </div>
+
         <aside class="pwd-constraints">
           <ul class="pwd-constraints__list">
             <li class="pwd-constraints__item length">8 characters</li>
@@ -87,24 +104,30 @@
             <li class="pwd-constraints__item number">number or special character</li>
           </ul>
         </aside>
+
       </form>
+
     </section>
     <section class="main__below">
+
       <div class="main__below-wrapper main__section">
         <button class="btn main__below-submit" type="submit" form="registration-form">Create Account</button>
         <p class="main__below-login">Already have an account? <a href="#" class="main__below-login-link">Log in</a></p>
       </div>
+
       <p class="main__notice notice">
         <span class="main__notice-notice">This is not a real online service.</span>
-        <span class="main__notice-author">Page designed and built by
+        <span class="main__notice-author">Page created by
           <span class="main__notice-links">
             <a class="main__notice-link notice-link" href="https://github.com/pascard20">Łukasz&nbsp;Pasternak</a>
             <a class="main__notice-link main__notice-icon notice-link"
-              href="https://github.com/pascard20/odin-05-signup-form"><i class="fa-brands fa-github"></i></a>
+              href="https://github.com/pascard20/metro-motion-signup-form"><i class="fa-brands fa-github"></i></a>
           </span>
         </span>
       </p>
+
     </section>
+
   </main>
 </body>
 

@@ -19,35 +19,36 @@ const passwordRequirements = [
 const handleInput = event => {
   const element = event.target;
   if (!element.required && !element.value) element.classList.add('empty');
-  if (element === elemPassword) {
-    const pwd = element.value;
-    if (pwd.length >= 8) elemPwdItemLength.classList.add('valid');
-    else elemPwdItemLength.classList.remove('valid');
 
-    if (pwd.match(/[^\p{L}]/gu)) elemPwdItemNumber.classList.add('valid');
-    else elemPwdItemNumber.classList.remove('valid');
-
-    if (pwd.match(/\p{Lu}/gu)) elemPwdItemUpper.classList.add('valid');
-    else elemPwdItemUpper.classList.remove('valid');
-
-    if (pwd.match(/\p{Ll}/gu)) elemPwdItemLower.classList.add('valid');
-    else elemPwdItemLower.classList.remove('valid');
-
-
-    let valid = true;
-    for (const item of passwordRequirements) {
-      if (!item.className.includes('valid')) {
-        valid = false;
-        element.setCustomValidity('Invalid password');
-        break;
-      };
-    }
-    if (valid) {
-      element.classList.remove('empty');
-      element.setCustomValidity('');
-    }
-  }
   if ([elemPassword, elemPasswordConfirm].includes(element)) {
+    if (element === elemPassword) {
+      const pwd = element.value;
+      if (pwd.length >= 8) elemPwdItemLength.classList.add('valid');
+      else elemPwdItemLength.classList.remove('valid');
+
+      if (pwd.match(/[^\p{L}]/gu)) elemPwdItemNumber.classList.add('valid');
+      else elemPwdItemNumber.classList.remove('valid');
+
+      if (pwd.match(/\p{Lu}/gu)) elemPwdItemUpper.classList.add('valid');
+      else elemPwdItemUpper.classList.remove('valid');
+
+      if (pwd.match(/\p{Ll}/gu)) elemPwdItemLower.classList.add('valid');
+      else elemPwdItemLower.classList.remove('valid');
+
+
+      let valid = true;
+      for (const item of passwordRequirements) {
+        if (!item.className.includes('valid')) {
+          valid = false;
+          element.setCustomValidity('Invalid password');
+          break;
+        };
+      }
+      if (valid) {
+        element.classList.remove('empty');
+        element.setCustomValidity('');
+      }
+    }
     if (!elemPassword.validity.valid) {
       elemPasswordConfirm.setCustomValidity(`Invalid password`);
     } else if (elemPassword.value !== elemPasswordConfirm.value) {
