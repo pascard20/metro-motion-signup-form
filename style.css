@@ -170,7 +170,7 @@ body {
 
 .hero__nav-arrows>* {
   margin: -.25em 0;
-  animation: fade-in 2s 1s both;
+  animation: fade-in 1.25s 1s both;
   text-shadow: 1px 1px 0 rgba(0, 0, 0, .3);
 }
 
@@ -200,6 +200,10 @@ body {
 
 .main__section {
   padding: 0 calc(2rem + 4vw);
+  animation: fade-in 1s both, roll-up-transform 1s both;
+
+  --initialDelay: 0s;
+  --delayStep: .15s;
 }
 
 .main__info {
@@ -209,6 +213,8 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
+
+  animation-delay: var(--initialDelay);
 }
 
 .main__info p>span {
@@ -263,6 +269,8 @@ body {
   padding-top: 2em;
   padding-bottom: 2.5em;
   z-index: 2;
+
+  animation-delay: calc(var(--initialDelay) + var(--delayStep));
 }
 
 .form {
@@ -398,6 +406,10 @@ body {
   justify-content: space-between;
   align-items: flex-start;
   z-index: 1;
+}
+
+.main__below-wrapper {
+  animation-delay: calc(var(--initialDelay) + var(--delayStep) * 2);
 }
 
 .main__below-submit {
@@ -566,11 +578,21 @@ body {
 
 @keyframes roll-up {
   from {
-    margin-top: .5em;
+    margin-top: 50px;
   }
 
   to {
     margin-top: 0;
+  }
+}
+
+@keyframes roll-up-transform {
+  from {
+    transform: translateY(25px);
+  }
+
+  to {
+    transform: translateY(0);
   }
 }
 
