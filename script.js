@@ -1,13 +1,14 @@
-elemForm = document.querySelector('.form');
-elemPassword = document.querySelector('#pwd');
-elemPasswordConfirm = document.querySelector('#pwd-confirm');
-elemPasswordConstraints = document.querySelector('.pwd-constraints');
-elemRoot = document.documentElement;
+const elemForm = document.querySelector('.form');
+const elemPassword = document.querySelector('#pwd');
+const elemPasswordConfirm = document.querySelector('#pwd-confirm');
+const elemPasswordConstraints = document.querySelector('.pwd-constraints');
+const elemButton = document.querySelector('.main__below-submit');
+const elemRoot = document.documentElement;
 
-elemPwdItemLength = document.querySelector('.pwd-constraints__item.length');
-elemPwdItemNumber = document.querySelector('.pwd-constraints__item.number');
-elemPwdItemUpper = document.querySelector('.pwd-constraints__item.upper');
-elemPwdItemLower = document.querySelector('.pwd-constraints__item.lower');
+const elemPwdItemLength = document.querySelector('.pwd-constraints__item.length');
+const elemPwdItemNumber = document.querySelector('.pwd-constraints__item.number');
+const elemPwdItemUpper = document.querySelector('.pwd-constraints__item.upper');
+const elemPwdItemLower = document.querySelector('.pwd-constraints__item.lower');
 
 const passwordRequirements = [
   elemPwdItemLength,
@@ -89,6 +90,12 @@ const handleFocusIn = event => {
   }
 }
 
+const handleButtonClick = () => {
+  emptyInputs = elemForm.querySelectorAll('.empty');
+  [...emptyInputs].forEach(item => item.classList.remove('empty'));
+}
+
 elemForm.addEventListener('focusin', handleFocusIn);
 elemForm.addEventListener('input', handleInput);
 elemForm.addEventListener('focusout', handleFocusOut);
+elemButton.addEventListener('click', handleButtonClick);
