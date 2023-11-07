@@ -55,6 +55,7 @@ body {
   display: flex;
   height: 100dvh;
   color: #0f1c19;
+  min-width: 315px;
 }
 
 .hero,
@@ -182,14 +183,17 @@ body {
 }
 
 .main__info-title {
+  --rectWidth: calc(.5em + 1.5vw);
+  --thisGap: .5em;
+  --thisMarginLeft: calc(var(--rectWidth) * -1 - var(--thisGap));
   font-weight: 600;
   margin-bottom: .5em;
   line-height: 1.4;
-  margin-left: -1.75em;
+  margin-left: var(--thisMarginLeft);
 
   display: grid;
-  grid-template: repeat(2, min-content) / 1.25em auto;
-  gap: 0 .5em;
+  grid-template: repeat(2, min-content) / calc(.5em + 1.5vw) auto;
+  gap: 0 var(--thisGap);
 }
 
 .main__info-title::before {
@@ -361,6 +365,7 @@ body {
   justify-content: space-between;
   align-items: flex-start;
   z-index: 1;
+  /* padding: 0; */
 }
 
 .main__below-submit {
@@ -384,10 +389,12 @@ body {
 .main__notice {
   color: rgba(0, 0, 0, .3);
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
-  margin-top: 2em;
+  margin-top: 3em;
   margin-bottom: 1.25em;
   align-self: center;
+  padding: 0 1.5em;
 }
 
 .main__notice-link:hover {
@@ -398,13 +405,30 @@ body {
   margin: 0 .2em;
 }
 
+.main__notice-links {
+  display: flex;
+  align-items: center;
+}
+
 .main__notice-icon {
+  display: block;
   font-size: 1.1em;
-  margin-top: .07em;
+  /* margin-top: .03em; */
 }
 
 .main__notice-icon:hover {
   transform: scale(1.2);
+}
+
+.main__notice-notice {
+  margin-right: .3em;
+  flex: 1;
+}
+
+.main__notice-author {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
 /* -------------------------- PASSWORD CONSTRAINTS -------------------------- */
@@ -417,7 +441,7 @@ body {
   position: relative;
   font-stretch: 97%;
   font-size: .925em;
-  grid-column: span 2;
+  grid-column: 1 / -1;
   grid-row: 3;
   /* opacity: 0; */
   display: flex;
@@ -452,6 +476,11 @@ body {
   -webkit-user-select: none;
   -ms-user-select: none;
   user-select: none;
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: .75em;
+  color: #707070;
+  gap: 0 1.5em;
 }
 
 .pwd-constraints.enabled .pwd-constraints__list {
@@ -476,14 +505,6 @@ body {
   .pwd-constraints__desc {
     display: none;
   }
-}
-
-.pwd-constraints__list {
-  display: flex;
-  flex-wrap: wrap;
-  margin-left: .75em;
-  color: #707070;
-  gap: 0 1.5em;
 }
 
 .pwd-constraints__item::marker {
@@ -523,5 +544,109 @@ body {
 
   to {
     margin-top: 0;
+  }
+}
+
+/* ------------------------------ MEDIA QUERIES ----------------------------- */
+
+@media only screen and (max-width: 1050px) {
+  .main__section {
+    padding-left: calc(.5rem + 5vw);
+    padding-right: calc(.5rem + 5vw);
+  }
+
+  .main__info {
+    padding-top: 3em;
+    font-size: calc(1em + .7vw);
+  }
+
+  .main__info-title::before {
+    width: 225%;
+    margin-left: -4vw;
+  }
+
+  .form {
+    grid-template-columns: auto;
+    /* width: min(100%, 15em); */
+    width: 100%;
+    /* gap: 1em 2.25em; */
+    /* align-items: center */
+  }
+
+  .form__item {
+    width: min(100%, calc(11em + 14vw));
+  }
+
+  .pwd-constraints {
+    grid-row: 5;
+  }
+
+  .main__notice {
+    flex-direction: column;
+  }
+}
+
+@media only screen and (max-width: 715px) {
+  body {
+    flex-direction: column;
+    /* overflow-y: auto; */
+    justify-content: flex-start;
+    height: auto;
+  }
+
+  .hero {
+    width: 100%;
+    height: 100dvh;
+    /* overflow-y: auto; */
+  }
+
+  .hero__heading-wrapper {
+    font-size: calc(.75em + 12vw);
+  }
+
+  .main {
+    overflow-y: initial;
+    flex: 0;
+  }
+
+  .main__info-title {
+    margin-bottom: 0;
+  }
+
+  .form {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .main__below-wrapper {
+    align-self: center;
+  }
+
+  .main__below-submit {
+    margin-top: 0;
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  .form {
+    grid-template-columns: auto;
+  }
+
+  .form__item {
+    width: 100%;
+    /* font-size: 1.1em; */
+  }
+
+  .pwd-constraints__list {
+    text-align: center;
+    justify-content: center;
+  }
+
+  /* .main__info-title {
+    text-align: center;
+  } */
+
+  .main__info-title::before {
+    width: 200%;
+    margin-left: -4vw;
   }
 }
