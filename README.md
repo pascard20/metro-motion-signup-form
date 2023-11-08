@@ -28,9 +28,9 @@ Cover image:
 
 ## Features
 
-- **Fully responsive design** optimized for both mobile and desktop.
-- **Attention to UX**, with an intuitive and elegant interface for a user-friendly sign-up process.
-- **Input validation** to enforce data accuracy and integrity, reducing the possibility of errors during submission.
+- **Responsive design** optimized for both mobile and desktop.
+- **Attention to UX**, with an intuitive interface for a user-friendly sign-up process.
+- **Input validation** to enforce data accuracy, reducing the possibility of errors during submission.
 - **Password requirements with visual indicators**, aiding users in creating strong and secure passwords while providing real-time feedback.
 
 <br>
