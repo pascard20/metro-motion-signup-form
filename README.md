@@ -19,6 +19,11 @@
 - **CSS**
 - **JavaScript**
 
+Cover image:
+
+- Blender
+- Adobe Photoshop
+
 <br>
 
 ## Features
@@ -35,4 +40,3 @@
 * This project is a part of [The Odin Project](https://www.theodinproject.com/) curriculum
 * Icons by [Font Awesome](https://fontawesome.com/)
 * Photo by [zero take](https://unsplash.com/@zerotake) on [Unsplash](https://unsplash.com/photos/a-man-walking-across-a-bridge-at-night-X0XIrKsbwjY)
-* Vector shapes by <a href="https://www.freepik.com/author/s-salvador">s-salvador</a> on <a href="https://www.freepik.com/free-vector/abstract-background-with-geometric-shapes_4500911.htm">Freepik</a>
