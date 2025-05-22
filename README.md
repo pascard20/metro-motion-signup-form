@@ -1,17 +1,13 @@
-## Project
+# Metro Motion Signup Form
+
+A clean, responsive sign-up form for a fictional site called **Metro Motion**.
+
+## Live Preview
 
 <div align="center">
-  <p><b>Sign-up form</b> for an imaginary website 'Metro Motion'</big>
-  <br>
-  <a href="https://pascard20.github.io/metro-motion-signup-form/">View Demo</a>
-  <p></p>
-  
-  <a href="https://pascard20.github.io/metro-motion-signup-form/">
-    <img src="./img/readme-cover.jpg" alt="Sign-up form" width="100%">
-  </a>
+  <a href="https://pascard20.github.io/metro-motion-signup-form/"><img src="./img/readme-cover.jpg" alt="Metro Motion Preview"></a>
+  <h3><a href="https://pascard20.github.io/metro-motion-signup-form/">View Live Demo</a></h3>
 </div>
-
-<br>
 
 ## Built with
 
@@ -24,16 +20,11 @@ Cover image:
 - Blender
 - Adobe Photoshop
 
-<br>
-
 ## Features
 
-- **Responsive design** optimized for both mobile and desktop.
-- **Attention to UX**, with an intuitive interface for a user-friendly sign-up process.
-- **Input validation** to enforce data accuracy, reducing the possibility of errors during submission.
-- **Password requirements with visual indicators**, aiding users in creating strong and secure passwords while providing real-time feedback.
-
-<br>
+* **Responsive design** that works smoothly on both mobile and desktop.
+* **User-friendly experience** with a clear, intuitive sign-up process.
+* **Real-time input validation** and visual feedback to help users enter accurate information easily.
 
 ## Acknowlegments and sources
 
